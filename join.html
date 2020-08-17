@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <h1>회원가입</h1>
+
+        <main id="joinInfo">
+             <div id="memName">
+                <input type="text" placeholder="이름" maxlength="30">
+             </div>
+             <div id="memId">
+                <input type="text" placeholder="아이디" maxlength="20">
+             </div>
+             <div id="memPw">
+                <input type="password" placeholder="비밀번호" maxlength="20">
+             </div>
+             <div id="memPw_Re">
+                <input type="password" placeholder="비밀번호 확인" maxlength="20">
+             </div>
+             <div id="memEmail">
+                <input type="text" placeholder="이메일" maxlength="50">
+             </div>
+             <div id="memBirth">
+                <select id="birthYear" onchange="fnReSet()"></select>
+                <select id="birthMonth" onchange="fnEndDateSet(this.value)" onclick="fnBirthMonth(this.value)"></select>
+                <select id="birthDate" onclick="fnDateSet(this.value)"></select>
+             </div>
+             <div id="memGender">
+                <input type="radio" name="gender">
+                <span>남</span>
+                <input type="radio" name="gender" checked>
+                <span>여</span>
+
+             </div>
+             <div id="phoneNo">
+                <input type="text" placeholder="휴대폰번호" maxlength="20">
+                <button style="width:80px">
+                인증
+                </button>
+
+             </div>
+             <div id="smsVerifyCode">
+                <input type="text" placeholder="SMS 인증번호" maxlength="10">
+                <button style="width:80px">
+                확인
+                </button>
+             </div>
+
+
+        </main>
+        <!-- main#joinInfo 가입정보 -->
+
+
+
+        <div id="memberTerms">
+            <h4>이용약관</h4>
+            <iframe src="source/memberLicense.html" frameborder="1"></iframe>
+
+        </div>
+        <!-- div#memberTerms 회원약관 -->
+
+
+
+        <div id="licenseAgree"></div>
+        <!-- div#licenseAgree 정보동의-->
+
+    </div>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

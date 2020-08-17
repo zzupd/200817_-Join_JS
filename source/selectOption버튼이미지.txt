@@ -1,0 +1,41 @@
+﻿[ select태그 펼침이미지 수정 CSS 적용법]
+
+1. -webkit-appearance: none; 
+  => 애플에서 제작한 속성으로
+       구글 크롬브라우저에서 
+       select 태그의 펼침아이콘을 제거함
+  사용예. select { -webkit-appearance: none; }
+
+2. ::-ms-expand 슈도클래스 선택자
+  => -webkit-appearance: none; 속성이
+       크롬에서만 적용되므로 IE에서도
+       적용되는 슈도클래스
+  사용예. select::-ms-expand {
+               display: none; 
+            }
+3. select 태그의 펼침아이콘으로 
+   사용할 이미지를 CSS에서 배경이미지로 설정
+-------------------------------
+
+[사용 예]
+1. HTML소스
+<select>
+    <option>옵션</option>
+</select>    
+
+
+2. CSS소스
+select {
+    -webkit-appearance: none;
+}
+select::-ms-expand {
+    display : none;
+}
+select {
+    width: 80px;
+    border: none;
+    background-image:url("downArrow_01.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
