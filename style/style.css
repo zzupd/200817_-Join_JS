@@ -29,7 +29,10 @@ div#wrap {
 }
 
 #wrap h1 {
+    font-size: 20px;
     text-align: center;
+    margin: 20px;
+
 }
 /* div#wrap 끝 */
 
@@ -134,6 +137,9 @@ main#joinInfo {
 
 
 /* div#memberTerms 시작 */
+div#memberTerms {
+    margin-bottom: 20px;
+}
 div#memberTerms>h4 {
     margin: 10px 4px;
 }
@@ -143,8 +149,77 @@ div#memberTerms>iframe {
 /* div#memberTerms 끝 */
 
 
+/* div#confirm14 시작 */
+div#confirm14 {
+    margin-bottom: 20px;
+}
+div#confirm14>span {
+    color: #ae0508;
+    font-weight: bold;
+}
+div#confirm14>p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+/* div#confirm14 끝 */
+
+
+
 /* div#licenseAgree 시작 */
 div#licenseAgree {
+    margin-bottom: 20px;
+}
+div#licenseAgree>div {
 
+    padding-left: 20px;
+    border: 1px solid #aaa;
+}
+div#licenseAgree>div:first-child {
+    height: 48px;
+}
+#licenseAgree>div:not(:first-child) {
+    font-size: 14px;
+
+    padding-left: 40px;
+    border-top: none;
+}
+
+#licenseAgree>div#wholeAgree {
+    height: 48px;
+    font-weight: bold;
+    line-height: 48px;
+}
+
+#licenseAgree>div#eachAgree {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+#licenseAgree td {
+    width: 260px;
+    padding: 4px 0;
 }
 /* div#licenseAgree 끝 */
+
+
+/* div#sbmBtnArea 시작 */
+div#sbmBtnArea {
+    text-align: center;
+}
+div#sbmBtnArea button {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px 40px;
+    background-color: #000;
+}
+/* div#sbmBtnArea 끝 */
+
+main, header, nav,
+aside, footer, section, address {
+    display: block;
+}
+
+
+

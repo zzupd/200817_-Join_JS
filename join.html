@@ -11,67 +11,150 @@
     <div id="wrap">
         <h1>회원가입</h1>
 
-        <main id="joinInfo">
-             <div id="memName">
-                <input type="text" placeholder="이름" maxlength="30">
-             </div>
-             <div id="memId">
-                <input type="text" placeholder="아이디" maxlength="20">
-             </div>
-             <div id="memPw">
-                <input type="password" placeholder="비밀번호" maxlength="20">
-             </div>
-             <div id="memPw_Re">
-                <input type="password" placeholder="비밀번호 확인" maxlength="20">
-             </div>
-             <div id="memEmail">
-                <input type="text" placeholder="이메일" maxlength="50">
-             </div>
-             <div id="memBirth">
-                <select id="birthYear" onchange="fnReSet()"></select>
-                <select id="birthMonth" onchange="fnEndDateSet(this.value)" onclick="fnBirthMonth(this.value)"></select>
-                <select id="birthDate" onclick="fnDateSet(this.value)"></select>
-             </div>
-             <div id="memGender">
-                <input type="radio" name="gender">
-                <span>남</span>
-                <input type="radio" name="gender" checked>
-                <span>여</span>
 
-             </div>
-             <div id="phoneNo">
-                <input type="text" placeholder="휴대폰번호" maxlength="20">
-                <button style="width:80px">
-                인증
+        <form id="joinFrm">
+
+
+            <main id="joinInfo">
+                <div id="memName">
+                    <input type="text" placeholder="이름"
+                    maxlength="30" name="uName" id="uName">
+                </div>
+                <div id="memId">
+                    <input type="text" placeholder="아이디"
+                    maxlength="20" name="uId" id="uId">
+                </div>
+                <div id="memPw">
+                    <input type="password" placeholder="비밀번호"
+                    maxlength="20" name="uPw" id="uPw">
+                </div>
+                <div id="memPw_Re">
+                    <input type="password" placeholder="비밀번호 확인"
+                     maxlength="20" id="uPw_Re">
+                </div>
+                <div id="memEmail">
+                    <input type="text" placeholder="이메일"
+                    maxlength="50" name="uEmail" id="uEmail">
+                </div>
+                <div id="memBirth">
+                    <select id="birthYear" onchange="fnReset()"></select>
+                    <select id="birthMonth" onclick="fnDelMonthOpt()" onchange="fnEndDate()"></select>
+                    <select id="birthDate" onclick="fnDelDateOpt()"></select>
+                </div>
+                <div id="memGender">
+                    <input type="radio" name="gender">
+                    <span>남</span>
+                    <input type="radio" name="gender" checked>
+                    <span>여</span>
+
+                </div>
+                <div id="phoneNo">
+                    <input type="text" placeholder="휴대폰번호" maxlength="20">
+                    <button style="width:80px">
+                        인증
+                    </button>
+
+                </div>
+                <div id="smsVerifyCode">
+                    <input type="text" placeholder="SMS 인증번호" maxlength="10">
+                    <button style="width:80px">
+                        확인
+                    </button>
+                </div>
+
+
+            </main>
+            <!-- main#joinInfo 가입정보 -->
+
+
+
+            <div id="memberTerms">
+                <h4>이용약관</h4>
+                <iframe src="source/memberLicense.html"></iframe>
+
+            </div>
+            <!-- div#memberTerms 회원약관 -->
+
+
+            <div id="confirm14">
+                <input type="checkbox" name="confirm14Chkbox" id="confirm14Chkbox">
+                <span>14세 이상입니다. (필수)</span>
+
+                <br>
+                <p>
+                    * 회원가입에 필요한 최소한의
+                    정보만 입력 받음으로써
+                    고객님의 개인정보 수집을 최소화하고
+                    <br>
+                    &nbsp;편리한 회원가입을 제공합니다.
+                </p>
+
+            </div>
+            <!-- div#confirm14 14세 이상 필수 체크-->
+
+
+            <div id="licenseAgree">
+
+                <div id="wholeAgree">
+                    <input type="checkbox" name="wholeAgreeChkBox"
+                    id="wholeAgreeChkBox" onclick="fnWholeChk()">
+                    <span>전체동의</span>
+                </div> <!-- div#wholeAgree 전체동의 -->
+                <div id="eachAgree">
+
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" id="chkBox_01" onclick="fnReverseChk()">
+                                    <span>이용약관</span>
+                                    <button type="button">
+                                        내용보기
+                                    </button>
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="chkBox_02" onclick="fnReverseChk()">
+                                    <span>개인정보수집및이용안내</span>
+                                    <button type="button">
+                                        내용보기
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" id="chkBox_03" onclick="fnReverseChk()">
+                                    <span>개인정보제3자제공</span>
+                                    <button type="button">
+                                        내용보기
+                                    </button>
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="chkBox_04" onclick="fnReverseChk()">
+                                    <span>개인정보처리위탁</span>
+                                    <button type="button">
+                                        내용보기
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div> <!-- div#eachAgree 개별동의 -->
+
+            </div>
+            <!-- div#licenseAgree 정보동의-->
+
+            <div id="sbmBtnArea">
+                <button type="button" onclick="fnSbm()">
+                    동의하고 가입완료
                 </button>
-
-             </div>
-             <div id="smsVerifyCode">
-                <input type="text" placeholder="SMS 인증번호" maxlength="10">
-                <button style="width:80px">
-                확인
-                </button>
-             </div>
+            </div> <!-- div#sbmBtnArea -->
 
 
-        </main>
-        <!-- main#joinInfo 가입정보 -->
-
-
-
-        <div id="memberTerms">
-            <h4>이용약관</h4>
-            <iframe src="source/memberLicense.html" frameborder="1"></iframe>
-
-        </div>
-        <!-- div#memberTerms 회원약관 -->
-
-
-
-        <div id="licenseAgree"></div>
-        <!-- div#licenseAgree 정보동의-->
+        </form> <!-- form#joinFrm -->
 
     </div>
+    <!-- div#wrap 끝 -->
     <script src="js/script.js"></script>
 
 </body>
